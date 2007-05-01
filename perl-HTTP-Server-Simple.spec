@@ -14,7 +14,7 @@ Source:		http://www.cpan.org/modules/by-module/HTTP/%{module}-%{version}.tar.bz2
 %if %{mdkversion} < 1010
 BuildRequires:	perl-devel
 %endif
-BuildRequires:	perl(CGI)
+BuildRequires:	perl(CGI) perl(URI::Escape)
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
