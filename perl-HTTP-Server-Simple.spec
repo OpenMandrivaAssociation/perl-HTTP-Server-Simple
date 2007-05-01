@@ -1,11 +1,11 @@
 %define module  HTTP-Server-Simple
 %define name	perl-%{module}
-%define version 0.20
-%define release %mkrel 1
+%define version 0.27
+%define rel 1
 
 Name: 		%{name}
 Version: 	%{version}
-Release:	%{release} 
+Release:	%mkrel %{rel} 
 License:	GPL or Artistic
 Group:		Development/Perl
 Summary:	Perl module to write simple standalone http daemons
