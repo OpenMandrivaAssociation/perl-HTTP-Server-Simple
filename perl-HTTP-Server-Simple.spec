@@ -1,6 +1,6 @@
 %define module  HTTP-Server-Simple
 %define name	perl-%{module}
-%define version 0.35
+%define version 0.36
 %define rel 1
 
 Name: 		%{name}
