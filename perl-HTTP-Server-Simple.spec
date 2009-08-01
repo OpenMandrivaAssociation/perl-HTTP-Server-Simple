@@ -1,22 +1,22 @@
-%define module  HTTP-Server-Simple
-%define name	perl-%{module}
-%define version 0.38
-%define rel 1
+%define upstream_name    HTTP-Server-Simple
+%define upstream_version 0.38
 
-Name: 		%{name}
-Version: 	%{version}
-Release:	%mkrel %{rel} 
-License:	GPL or Artistic
-Group:		Development/Perl
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary:	Perl module to write simple standalone http daemons
-URL:		http://search.cpan.org/dist/%{module}
-Source:		http://www.cpan.org/modules/by-module/HTTP/%{module}-%{version}.tar.bz2
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/HTTP/%{upstream_name}-%{upstream_version}.tar.bz2
+
 %if %{mdkversion} < 1010
 BuildRequires:	perl-devel
 %endif
 BuildRequires:	perl(CGI) perl(URI::Escape)
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This module is a simple standalone http dameon. It doesn't thread. It doesn't
@@ -24,7 +24,7 @@ fork. It does, however, act as a simple frontend which can turn a CGI into a
 standalone web-based application.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -45,4 +45,3 @@ rm -rf %{buildroot}
 %doc ex README Changes
 %{perl_vendorlib}/HTTP
 %{_mandir}/man3/*
-
