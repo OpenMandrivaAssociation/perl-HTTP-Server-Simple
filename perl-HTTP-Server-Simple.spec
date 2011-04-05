@@ -1,5 +1,5 @@
 %define upstream_name    HTTP-Server-Simple
-%define upstream_version 0.43
+%define upstream_version 0.44
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
@@ -14,7 +14,8 @@ Source0:	http://www.cpan.org/modules/by-module/HTTP/%{upstream_name}-%{upstream_
 %if %{mdkversion} < 1010
 BuildRequires:	perl-devel
 %endif
-BuildRequires:	perl(CGI) perl(URI::Escape)
+BuildRequires: perl(CGI) 
+BuildRequires: perl(URI::Escape)
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
