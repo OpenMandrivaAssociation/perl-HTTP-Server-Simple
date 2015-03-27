@@ -1,10 +1,10 @@
 %define modname	HTTP-Server-Simple
-%define modver	0.44
+%define modver 0.50
 
 Summary:	Perl module to write simple standalone http daemons
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	13
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
@@ -24,7 +24,7 @@ standalone web-based application.
 %setup -qn %{modname}-%{modver}
 
 %build
-%__perl Makefile.PL INSTALLDIRS=vendor
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
@@ -37,4 +37,3 @@ make test
 %doc ex README Changes
 %{perl_vendorlib}/HTTP
 %{_mandir}/man3/*
-
