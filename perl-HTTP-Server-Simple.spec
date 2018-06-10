@@ -1,18 +1,20 @@
 %define modname	HTTP-Server-Simple
-%define modver	0.44
+%define modver	0.52
 
 Summary:	Perl module to write simple standalone http daemons
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	14
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{modname}
+Url:		https://metacpan.org/pod/HTTP::Server::Simple
 Source0:	http://www.cpan.org/modules/by-module/HTTP/%{modname}-%{modver}.tar.gz
 BuildArch:	noarch
 BuildRequires:	perl-devel
 BuildRequires:	perl(CGI) 
 BuildRequires:	perl(URI::Escape)
+BuildRequires:	perl(Test) 
+BuildRequires:	perl(Test::More) 
 Requires:	perl(CGI)
 
 %description
